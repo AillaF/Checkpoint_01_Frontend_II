@@ -6,16 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- linkagem das fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+
+    <!-- linkagem do favicon -->
+    <link rel="shortcut icon" href="https://image.flaticon.com/icons/png/512/1829/1829589.png" type="image/x-icon">
+
+    <!-- linkagem do css -->
     <link rel="stylesheet" href="./css/style.css">
 
+    <!-- nome na aba do navegador -->
     <title>CardStock</title>
 </head>
 
 <body>
+    <!-- header somente com a "marca" e subtítulo do site -->
     <header>
         <div id="brand">
             <h1 id="card">C</h1>
@@ -27,18 +35,23 @@
         <h2 id="subtitle">Seu quadro de inspirações</h2>
     </header>
 
+    <!-- main com local para criação dos cards, botão para abrir o formulário e formulário de criação dos cards -->
     <main>
+        <!-- div em que os cards serão criados -->
         <div id="cards">
         </div>
 
+        <!-- botão de abrir o formulário para adicionar as informações e criar os cards -->
         <button id="btnOpenFormImgs">
             <img src="./imgs/btnOpenFormImgs.svg" alt="">
         </button>
         
+        <!-- formulário para adicionar informações e gerar os cards -->
         <div id="extraDivFormImgs" style="display: none">
             <div id="divFormImgs">
                 <div id="formImgsAnimation">
                     <form id="formImgs">
+                        <!-- botão para fechar o formulário que gera os cards -->
                         <button id="btnCloseFormImgs">
                             <img src="./imgs/btnClose.svg" alt="">
                         </button>
@@ -46,6 +59,7 @@
                         <fieldset>
                             <legend>Inspirações</legend>
 
+                            <!-- campos do formulário para criar os cards -->
                             <div id="formImgsInputs">                            
                                 <label for="title">Título</label>
                                 <input type="text" name="title" id="titleFormImgs" placeholder="Insira um título">
@@ -57,6 +71,7 @@
                                 <input type="text" name="description" id="descriptionFormImgs" placeholder="Escreva uma breve descrição">
                             </div>
 
+                            <!-- botões de enviar ou limpar informações do formulário -->
                             <div id="divBtnFormImgs">
                                 <button type="submit" id="submitFormImgs">Adicionar</button>
                                 <button type="reset" id="resetFormImgs">Limpar</button>
@@ -68,7 +83,9 @@
         </div>    
     </main>
 
+    <!-- footer com formulário para entrar contato e equipe -->
     <footer>
+        <!-- botão para abrir o formulário de contato -->
         <button id="btnOpenContact">
             <div>
                 <img src="./imgs/iconContact.svg" alt="">
@@ -76,9 +93,11 @@
             </div>
         </button>
         
+        <!-- formulário de contato -->
         <div id="extraDivContact" style="display: none">
             <div id="divContact">
                 <form id="formContact">
+                    <!-- botão para fechar o formulário de contato -->
                     <button id="btnCloseContact">
                         <img src="./imgs/btnClose.svg" alt="">
                     </button>
@@ -86,6 +105,7 @@
                     <fieldset>
                         <legend>Fale Conosco</legend>
 
+                        <!-- campos do formulário de contato -->
                         <div id="contactInputs">
                             <label for="name">Nome</label>
                             <input type="text" placeholder="Insira seu nome" name="name">
@@ -97,6 +117,7 @@
                             <textarea placeholder="Escreva sua mensagem" name="message" cols="20" rows="5"></textarea>
                         </div>
 
+                        <!-- botão para enviar informações e entrar em contato -->
                         <div id="divBtnContact">
                             <button type="submit" id="submitContact">Enviar</button>
                         </div>
@@ -105,6 +126,7 @@
             </div>
         </div>
 
+        <!-- botão para abrir as informações da equipe -->
         <button id="btnOpenTeam">
             <div>
                 <img src="./imgs/iconTeam.svg" alt="">
@@ -112,8 +134,10 @@
             </div>
         </button>
         
+        <!-- informações da equipe -->
         <div id="extraDivTeam" style="display: none">
             <div id="divTeam">
+                <!-- botão para fechar informações da equipe -->
                 <button id="btnCloseTeam">
                     <img src="./imgs/btnClose.svg" alt="">
                 </button>
@@ -121,6 +145,7 @@
                 <fieldset>
                     <legend>Equipe</legend>
 
+                    <!-- membros da equipe -->
                     <ul>
                         <li>Ailla Freire</li>
                         <li>Carolina Hakamada</li>
@@ -134,6 +159,7 @@
         </div>
     </footer>
 
+    <!-- linkagem com o JS -->
     <script src="./js/main.js"></script>
 </body>
 

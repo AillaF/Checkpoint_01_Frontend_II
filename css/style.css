@@ -1,0 +1,563 @@
+html {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header {
+  background: #002036;
+  height: 4rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  gap: 1rem;
+}
+
+#brand {
+  display: flex;
+}
+
+h1 {
+  display: none;
+  font-family: 'Satisfy', cursive;
+  font-weight: bold;
+  color: #6081FF;
+}
+
+#card, #stock {
+  display: block;
+  font-weight: bolder;
+  color: #FFFDF1;
+}
+
+#subtitle {
+  font-family: 'Satisfy', cursive;
+  align-self: flex-end;
+  font-size: 1rem;
+  font-weight: normal;
+  color: #FFFDF1;
+}
+
+#cards {
+  min-height: 60vh;
+  margin: 3rem;
+  padding: 0.5rem;
+  border: 5px solid #FFD5D5;
+  border-radius: 1rem;
+  columns: 5 200px;
+  column-gap: 0;
+}
+
+.card {
+  border-radius: 1rem;
+  padding: 1rem;
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cardContent {
+  width: 100%;
+  word-break: break-word;
+}
+
+.divBtnDeletePic {
+  display: none;
+  top: 0;
+  left: 0;
+  border-radius: 1rem;
+  background: rgba(255, 0, 0, 0.61);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.btnDeletePic {
+  max-width: 6rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.btnDeletePic:active {
+  opacity: 0; 
+}
+
+.cardTitle {
+  color: #6081FF;
+  padding: 0 0.5rem;
+  margin-bottom: 0.15rem;
+  font-size: 1.25rem;
+  font-weight: bolder;
+  word-break: break-word;
+}
+
+.cardDescription{
+  color: #002036;
+  padding: 0 0.65rem 0 0.5rem;
+  font-size: 0.9rem;
+}
+
+.cardPicture {
+  border-radius: 1rem;
+  margin-bottom: 0.15rem;
+}
+
+.cardPicture, .cardTitle, .cardDescription {
+  width: 100%;
+}
+
+#btnOpenFormImgs {
+  left: 50%;
+  transform: translate(-50%, 0);
+  position: fixed;
+  bottom: 5.5rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  cursor: pointer;
+  border-radius: 1.5rem;
+  transition: all 0.3s ease-in-out;
+  z-index: 2;
+  padding: 0;
+  border: none;
+  background: #FFD5D5;
+}
+
+#btnOpenFormImgs:hover, #btnOpenFormImgs:focus {
+  box-shadow: 0 0 7px 5px #FFD5D5;
+  opacity: 0.9;
+}
+
+#btnOpenFormImgs:focus, #btnCloseFormImgs:focus, #btnCloseContact:focus, #btnCloseTeam:focus, #btnBtnCloseFormImgs:focus {
+  outline: #6081FF  solid 3px;
+}
+
+#btnOpenFormImgs:active {
+  transform: scale(0.9) translateX(-50%);
+  opacity: 1;
+  filter: brightness(0.8);
+  box-shadow: 0 0 7px 5px #FFD5D5;
+}
+
+#extraDivFormImgs {
+  z-index: 1;
+}
+
+#divFormImgs {
+  position: fixed;
+  z-index: 2;
+  bottom: 9rem;
+  width: 90%;
+  left: 50%;
+  border-radius: 1.2rem;
+  transform: translateX(-50%);
+  max-width: 27rem;
+}
+
+#formImgsAnimation {
+  background: #FFD5D5;
+  padding: 1rem;
+  border-radius: 1.2rem;
+  border: 0.25rem solid white;
+  animation: openFormAnimation 0.7s ease-in-out;
+}
+
+@keyframes openFormAnimation {
+  from {
+    opacity: 0;
+    transform: scale(0.5) translateY(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+#divFormImgs form {
+  display: flex;
+  flex-direction: column;
+}
+
+#btnCloseFormImgs, #btnCloseContact, #btnCloseTeam {
+  align-self: flex-end;
+  height: 1.3rem;
+  width: 1.3rem;
+  margin-right: 0.35rem;
+  margin-bottom: -0.3rem;
+  padding: 0;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  background: #CC3842;
+}
+
+#btnCloseFormImgs:hover, #btnCloseFormImgs:focus, #btnCloseContact:hover, #btnCloseContact:focus, #btnCloseTeam:hover, #btnCloseTeam:focus {
+  box-shadow: 0 0 7px 1px #CC3842;
+  opacity: 0.9;
+}
+
+#btnCloseFormImgs:active, #btnCloseContact:active, #btnCloseTeam:active {
+  transform: scale(0.9);
+  opacity: 1;
+  filter: brightness(0.8);
+  box-shadow: 0 0 7px 5px #CC3842;
+}
+
+#divFormImgs form fieldset {
+  border-radius: 0.8rem;
+  border: 0.25rem solid white;
+  color: white;
+  padding: 0.5rem 1rem 1rem 1rem;
+}
+
+#divFormImgs form fieldset legend {
+  font-family: 'Satisfy', cursive;
+  font-size: 1.5rem;
+  padding: 0 0.3rem;
+}
+
+#formImgsInputs {
+  display: flex;
+  flex-direction: column;
+}
+
+#formImgsInputs label {
+  margin-bottom: 0.15rem;
+  margin-left: 0.2rem;
+  font-size: 0.9rem;
+  font-weight: lighter;
+}
+
+#formImgsInputs input {
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 0.8rem;
+  padding: 0.3rem;
+  margin-bottom: 0.8rem;
+}
+
+#formImgsInputs input:focus {
+  outline: #6081FF solid 2px;
+}
+
+#divBtnFormImgs, #divBtnContact {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#divBtnFormImgs button, #divBtnContact button {
+  margin-top: 0.75rem;
+  width: 6rem;
+  border-radius: 0.4rem;
+  border: none;
+  padding: 0.2rem;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+#submitFormImgs {
+  background: #6081FF;
+  transition: all 0.3s ease-in-out;
+}
+
+#submitFormImgs:hover, #submitFormImgs:focus {
+  box-shadow: 0 0 7px 1px #6081FF;
+  opacity: 0.9;
+}
+
+#submitFormImgs:focus {
+  outline: #FFFDF1  solid 3px;
+}
+
+#submitFormImgs:active {
+  transform: scale(0.9);
+  opacity: 1;
+  background: #4d67cc;
+  box-shadow: 0 0 7px 1px #4d67cc;
+}
+
+#resetFormImgs {
+  background: #CC3842;
+  transition: all 0.3s ease-in-out;
+}
+
+#resetFormImgs:hover, #resetFormImgs:focus {
+  box-shadow: 0 0 7px 1px #CC3842;
+  opacity: 0.9;
+}
+
+#resetFormImgs:focus {
+  outline: #FFFDF1  solid 3px;
+}
+
+#resetFormImgs:active {
+  transform: scale(0.9);
+  opacity: 1;
+  background: #a32d35;
+  box-shadow: 0 0 7px 1px #a32d35;
+}
+
+footer {
+  background: #002036;
+  width: 100%;
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+#btnOpenContact {
+  padding: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 1.5rem;
+  background: #6081FF;
+  z-index: 3;
+}
+
+#btnOpenContactText {
+  margin-left: 0.5rem;
+}
+
+#btnOpenContact:hover, #btnOpenContact:focus, #btnOpenTeam:hover, #btnOpenTeam:focus {
+  box-shadow: 0 0 7px 5px #6081FF;
+  opacity: 0.9;
+}
+
+#btnOpenContact:focus, #btnOpenTeam:focus {
+  outline: #FFD5D5 solid 3px;
+}
+
+#btnOpenContact:active, #btnOpenTeam:active {
+  transform: scale(0.9);
+  opacity: 1;
+  filter: brightness(0.8);
+  box-shadow: 0 0 7px 5px #4d67cc;
+}
+
+#extraDivContact {
+  z-index: 2;
+}
+
+#divContact {
+  position: fixed;
+  z-index: 3;
+  bottom: 4rem;
+  width: 70%;
+  left: 1.7rem;
+  border-radius: 1.2rem;
+  max-width: 25rem;
+  background: #FFD5D5;
+  padding: 1rem;
+  border-radius: 1.2rem;
+  border: 0.25rem solid #6081FF;
+  animation: openContactAnimation 0.6s ease-in-out;
+}
+
+@keyframes openContactAnimation {
+  from {
+    opacity: 0;
+    transform: scale(0.5) translate(-35%, 100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+#divContact form {
+  display: flex;
+  flex-direction: column;
+}
+
+#divContact form fieldset {
+  border-radius: 0.8rem;
+  border: 0.25rem solid white;
+  color: white;
+  padding: 0.5rem 1rem 1rem 1rem;
+}
+
+#divContact form fieldset legend, #divTeam fieldset legend {
+  font-family: 'Satisfy', cursive;
+  font-size: 1.4rem;
+  padding: 0 0.3rem;
+}
+
+#contactInputs {
+  display: flex;
+  flex-direction: column;
+}
+
+#contactInputs label {
+  margin-bottom: 0.15rem;
+  margin-left: 0.2rem;
+  font-size: 0.85rem;
+  color: white;
+}
+
+#contactInputs input, #contactInputs textarea {
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 0.7rem;
+  padding: 0.3rem;
+  margin-bottom: 0.8rem;
+}
+
+#contactInputs input:focus, #contactInputs textarea:focus {
+  outline: #6081FF solid 2px;
+}
+
+#submitContact {
+  background: #6081FF;
+  transition: all 0.3s ease-in-out;
+}
+
+#submitContact:hover {
+  box-shadow: 0 0 7px 1px #6081FF;
+  opacity: 0.9;
+}
+
+#submitContact:focus {
+  outline: #FFFDF1  solid 3px;
+  box-shadow: 0 0 7px 1px #6081FF;
+  opacity: 0.9;
+}
+
+#submitContact:active {
+  transform: scale(0.9);
+  opacity: 1;
+  background: #4d67cc;
+  box-shadow: 0 0 7px 1px #4d67cc;
+}
+
+#btnOpenTeam {
+  padding: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 1.5rem;
+  background: #6081FF;
+  z-index: 3;
+}
+
+#btnOpenTeamText{
+  margin-right: 0.7rem;
+}
+
+#btnOpenTeamText, #btnOpenContactText {
+  display: none;
+  font-family: 'Satisfy', cursive;
+  font-size: 1.2rem;
+  color: white;
+}
+
+#extraDivTeam {
+  z-index: 2;
+}
+
+#extraDivFormImgs, #extraDivTeam, #extraDivContact {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+#divTeam {
+  position: fixed;
+  z-index: 3;
+  bottom: 4rem;
+  width: 14.3rem;
+  right: 1.7rem;
+  border-radius: 1.2rem;
+  background: #FFD5D5;
+  padding: 1rem;
+  border-radius: 1.2rem;
+  border: 0.25rem solid #6081FF;
+  animation: openTeamAnimation 0.55s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes openTeamAnimation {
+  from {
+    opacity: 0;
+    transform: scale(0.5) translate(35%, 100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+#divTeam fieldset {
+  border-radius: 0.8rem;
+  border: 0.25rem solid white;
+  color: white;
+  padding: 0.8rem 1.7rem 1.3rem 1.7rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: white;
+}
+
+@media screen and (min-width: 315px){
+  h1 {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 475px) {
+  #btnOpenTeamText, #btnOpenContactText {
+    display: block;
+  }
+
+  #btnOpenContact, #btnOpenTeam {
+    width: 10rem;
+    border-radius: 1.5rem;
+  }
+
+  #btnOpenContact div, #btnOpenTeam div {
+    display: flex;
+    align-items: center;
+  }
+
+  #btnOpenTeam div {
+    flex-direction: row-reverse;
+  }
+
+  #btnOpenContact img, #btnOpenTeam img {
+    width: 2.5rem;
+  }
+}

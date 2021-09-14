@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>CardStock</title>
+</head>
+
+<body>
+    <header>
+        <div id="brand">
+            <h1 id="card">C</h1>
+            <h1>ard</h1>
+            <h1 id="stock">S</h1>
+            <h1>tock</h1>
+        </div>
+
+        <h2 id="subtitle">Seu quadro de inspirações</h2>
+    </header>
+
+    <main>
+        <div id="cards">
+        </div>
+
+        <button id="btnOpenFormImgs">
+            <img src="./imgs/btnOpenFormImgs.svg" alt="">
+        </button>
+        
+        <div id="extraDivFormImgs" style="display: none">
+            <div id="divFormImgs">
+                <div id="formImgsAnimation">
+                    <form id="formImgs">
+                        <button id="btnCloseFormImgs">
+                            <img src="./imgs/btnClose.svg" alt="">
+                        </button>
+                        
+                        <fieldset>
+                            <legend>Inspirações</legend>
+
+                            <div id="formImgsInputs">                            
+                                <label for="title">Título</label>
+                                <input type="text" name="title" id="titleFormImgs" placeholder="Insira um título">
+                                
+                                <label for="picture">Foto</label>
+                                <input type="text" name="picture" id="pictureFormImgs" placeholder="Link da foto">
+                                
+                                <label for="description">Descrição</label>
+                                <input type="text" name="description" id="descriptionFormImgs" placeholder="Escreva uma breve descrição">
+                            </div>
+
+                            <div id="divBtnFormImgs">
+                                <button type="submit" id="submitFormImgs">Adicionar</button>
+                                <button type="reset" id="resetFormImgs">Limpar</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>    
+    </main>
+
+    <footer>
+        <button id="btnOpenContact">
+            <div>
+                <img src="./imgs/iconContact.svg" alt="">
+                <p id="btnOpenContactText">Fale conosco</p>
+            </div>
+        </button>
+        
+        <div id="extraDivContact" style="display: none">
+            <div id="divContact">
+                <form id="formContact">
+                    <button id="btnCloseContact">
+                        <img src="./imgs/btnClose.svg" alt="">
+                    </button>
+
+                    <fieldset>
+                        <legend>Fale Conosco</legend>
+
+                        <div id="contactInputs">
+                            <label for="name">Nome</label>
+                            <input type="text" placeholder="Insira seu nome" name="name">
+
+                            <label for="email">Email</label>
+                            <input type="email" placeholder="Insira seu email" name="email">
+
+                            <label for="message">Mensagem</label>
+                            <textarea placeholder="Escreva sua mensagem" name="message" cols="20" rows="5"></textarea>
+                        </div>
+
+                        <div id="divBtnContact">
+                            <button type="submit" id="submitContact">Enviar</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+        <button id="btnOpenTeam">
+            <div>
+                <img src="./imgs/iconTeam.svg" alt="">
+                <p id="btnOpenTeamText">Equipe</p>
+            </div>
+        </button>
+        
+        <div id="extraDivTeam" style="display: none">
+            <div id="divTeam">
+                <button id="btnCloseTeam">
+                    <img src="./imgs/btnClose.svg" alt="">
+                </button>
+
+                <fieldset>
+                    <legend>Equipe</legend>
+
+                    <ul>
+                        <li>Ailla Freire</li>
+                        <li>Carolina Hakamada</li>
+                        <li>Dominic Lourenço</li>
+                        <li>Helena Perdigueiro</li>
+                        <li>Renata Leal</li>
+                        <li>Ruthiane Teixeira</li>
+                    </ul>
+                </fieldset>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
